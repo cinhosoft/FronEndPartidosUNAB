@@ -1,0 +1,12 @@
+<h1 class="header">Partidos Registrados</h1>
+<table id="filas">
+    <tr>
+      <th>Fecha Partido</th>
+      <th>Equipos</th>  
+    </tr>
+    <tr *ngFor="let partido of partidos">
+      <td>{{partido.fecha.substring(0,10)}}</td>
+      <td><a [routerLink]= "['../editar-partido', partido.id]">{{partido.local.nombre}} ({{partido.goles_local}})  vs ({{partido.goles_visitante}}) {{partido.visitante.nombre}}   </a></td>
+      <p>{{partido.visitante.Nombre}} </p>
+    </tr> 
+</table>

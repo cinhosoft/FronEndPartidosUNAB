@@ -1,0 +1,19 @@
+<h1 class="login-header">{{title}}</h1>
+<div class="container">
+    <div class="login">
+        <div class="login-triangle"></div>
+
+        <h2 class="login-header" center>Login</h2>
+         <form  #formLogin="ngForm" class="login-container" (ngSubmit)="onLogin()">
+            <p>
+                <input type="text " name="username" #username="ngModel" [(ngModel)]="usuario.username"  placeholder="Nombre Usuario" ngModel required>
+                <span *ngIf="!username.valid && username.touched">El Nombre de Usuario Es Obligatorio</span>
+            </p>
+            <p>
+                <input type="password" name="password" #password="ngModel" [(ngModel)]="usuario.password"  placeholder="Password " ngModel required>
+                <span *ngIf="!password.valid && password.touched">La Contraseña Es Obligatoria</span>
+            </p>
+            <input type="submit" value="Ingresar">
+          </form> 
+    </div>
+</div>

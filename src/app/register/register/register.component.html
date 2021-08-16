@@ -1,0 +1,28 @@
+<h1 class="register-header">{{title}}</h1>
+<div class="container">
+    <div class="register">
+        <div class="register-triangle"></div>
+        <h2 class="register-header">Registrar</h2>
+        <span >{{mensaje}}</span>
+           
+        <form  #formRegister="ngForm" class="login-container" (ngSubmit)="onRegistrar(formRegister);">
+            <p>
+                <input type="text " name="nombre" #nombre="ngModel" [(ngModel)]="usuario.nombre" placeholder="Nombre" ngModel required>
+                <span *ngIf="!nombre.valid && nombre.touched">El Nombre Es Obligatorio</span>
+            </p>
+            <p>
+                <input type="mail" name="correo" #correo="ngModel" [(ngModel)]="usuario.correo" placeholder="Correo Electronico" ngModel required>
+                <span *ngIf="!correo.valid && correo.touched">El Correo Es Obligatorio</span>
+            </p>
+            <p>
+                <input type="text" name="username" #username="ngModel" [(ngModel)]="usuario.username"  placeholder="Usuario" ngModel required>
+                <span *ngIf="!username.valid && username.touched">El Usuario Es Obligatorio</span>
+            </p>
+            <p>
+                <input type="password" name="password" #password="ngModel" [(ngModel)]="usuario.password"  placeholder="Password " ngModel required>
+                <span *ngIf="!password.valid && password.touched">Debe Digitar una Contraseña</span>
+            </p>
+            <input type="submit" value="Registrar" [disabled]="!formRegister.form.valid"/>
+          </form> 
+    </div>
+</div>

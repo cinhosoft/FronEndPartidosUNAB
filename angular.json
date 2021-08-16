@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "FronEndPartidosUNAB"
+    }
+  },
+  "defaultProject": "FronEndPartidosUNAB",
+  "cli": {
+    "analytics": "ba3fd54f-5fc7-49d7-b9c1-114f7bd0955d"
+  }
 }

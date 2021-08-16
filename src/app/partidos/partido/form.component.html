@@ -1,0 +1,46 @@
+<h1 class="register-header">{{title}}</h1>
+<div class="container">
+    <div class="register">
+        <div class="register-triangle"></div>
+        <h2 class="register-header">Partidos</h2>
+        <span >{{mensaje}}</span>
+        
+        <form  #formRegister="ngForm" class="login-container" (ngSubmit)="onRegistrar(formRegister);">
+            <p>
+                <label >Equipo Visitante:</label>
+                <select name="visitante"   #visitante="ngModel" [(ngModel)]="partido.visitante"> 
+                    <option value={{equipo.id}} *ngFor="let equipo of equipos">
+                        {{equipo.nombre}}
+                    </option>
+                 </select>
+            </p>
+            <p>
+                <label >Equipo Local:</label>
+                <select name="local"  #local="ngModel" [(ngModel)]="partido.local">
+                    <option value={{equipo.id}} *ngFor="let equipo of equipos">
+                        {{equipo.nombre}}
+                    </option>
+                    
+                 </select>
+            </p>
+            <p>
+                <label for="">Fecha Partido</label>
+                <input type="date" 
+                  
+                    min="2018-01-01" max="2021-12-31" name="fecha" #fecha="ngModel" [(ngModel)]="partido.fecha">
+            </p>
+            <p>
+                <input matInput  type="number " name="goles_visitante" #goles_visitante="ngModel" [(ngModel)]="partido.goles_visitante" placeholder="Goles Visitante" ngModel required>
+                <!--<span *ngIf="!nombre.valid && nombre.touched">El Nombre Es Obligatorio</span>-->
+                <!-- #nombre="ngModel" [(ngModel)]="usuario.nombre" -->
+            </p>
+            <p>
+                <input type="number " name="goles_local" #goles_local="ngModel" [(ngModel)]="partido.goles_local"  placeholder="Goles Local" ngModel required>
+                <!--<span *ngIf="!nombre.valid && nombre.touched">El Nombre Es Obligatorio</span>-->
+                <!-- #nombre="ngModel" [(ngModel)]="usuario.nombre" -->
+            </p>
+            <input type="submit" value="Agregar Partido" />
+          </form> 
+          
+    </div>
+</div>

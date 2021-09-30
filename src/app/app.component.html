@@ -9,7 +9,7 @@
     <li *ngIf="usuarioService.esAutenticado()"><a class="nav-link" routerLink="registro-partido" routerLinkActive="active">Registrar Partidos</a> </li>
     <li *ngIf="usuarioService.esAutenticado()"><a class="nav-link" routerLink="partido" routerLinkActive="active">Listar Partidos</a> </li>
     <li *ngIf="!usuarioService.esAutenticado()" style="float:right"> <a class="nav-link" style="float:right" routerLink="/login" routerLinkActive="active" >Login</a> </li>
-    <li *ngIf="usuarioService.esAutenticado()" style="float:right"> <a clzass="nav-link" routerLinkActive="active"   (click)="logout()">Logout</a> </li>
+    <li *ngIf="usuarioService.esAutenticado()" style="float:right"> <a clzass="nav-link" routerLinkActive="active"  (click)="logout()">Logout</a> </li>
 </ul>
   
   <div class="text-center"> 

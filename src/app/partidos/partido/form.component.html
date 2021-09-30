@@ -17,7 +17,7 @@
             <p>
                 <label >Equipo Local:</label>
                 <select name="local"  #local="ngModel" [(ngModel)]="partido.local">
-                    <option value={{equipo.id}} *ngFor="let equipo of equipos">
+                    <option value="{{equipo.id}}" *ngFor="let equipo of equipos">
                         {{equipo.nombre}}
                     </option>
                     
